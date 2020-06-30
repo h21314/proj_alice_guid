@@ -84,6 +84,10 @@
             <artifactId>leaf-core</artifactId>
         </dependency>
         <dependency>
+            <groupId>com.sankuai.inf.leaf</groupId>
+            <artifactId>leaf-api</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
         </dependency>

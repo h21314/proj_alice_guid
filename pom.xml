@@ -10,6 +10,7 @@
     <modules>
         <module>leaf-core</module>
         <module>leaf-server</module>
+        <module>leaf-api</module>
     </modules>
     <description>Distributed ID Generate Service</description>
     <developers>
@@ -66,6 +67,11 @@
             <dependency>
                 <groupId>com.sankuai.inf.leaf</groupId>
                 <artifactId>leaf-core</artifactId>
+                <version>1.0.1</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sankuai.inf.leaf</groupId>
+                <artifactId>leaf-api</artifactId>
                 <version>1.0.1</version>
             </dependency>
             <dependency>

@@ -9,14 +9,14 @@
         <property name="EVERY_FILE_SIZE">1G/backup</property>
         <property name="OUTPUT_LOG_LEVEL">INFO</property>
         <property name="FILE_MAX">10</property>
-        <property name="LAYOUT_PATTERN">%d{yyyy-MM-dd HH:mm:ss:SSS z} %5p %c:%L - %m%n</property>
+        <property name="LAYOUT_PATTERN">%d{yyyy-MM-dd HH:mm:ss:SSS z} [%X{traceId}] %5p %c:%L - %m%n</property>
     </properties>
     <!--先定义所有的appender-->
     <appenders>
         <!--这个输出控制台的配置-->
         <console name="Console" target="SYSTEM_OUT">
             <!--输出日志的格式-->
-            <PatternLayout pattern="[%d{HH:mm:ss:SSS}] [%p] - %c-%l - %m%n"/>
+            <PatternLayout pattern="${LAYOUT_PATTERN}"/>
         </console>
         <!-- 这个会打印出所有的info及以下级别的信息，每次大小超过size，则这size大小的日志会自动存入按年份-月份建立的文件夹下面并进行压缩，作为存档-->
         <RollingFile name="RollingFileDebug" fileName="${LOG_HOME}/debug.log"
@@ -81,8 +81,10 @@
         <logger name="cn.edu.hfut.dmic" level="error" />
         <logger name="org.apache.http" level="error" />
         <logger name="tk.mybatis.spring" level="error" />
-        <logger name="org.apache.ibatis.io" level="error" />
+        <logger name="org.apache.ibatis" level="error" />
+        <logger name="com.sankuai.inf" level="INFO"/>
         <logger name="org.mybatis" level="INFO" />
+        <logger name="org.apache.dubbo" level="INFO"/>
         <logger name="org.mybatis.spring" level="error" />
         <logger name="io.netty" level="error" />
         <logger name="io.lettuce" level="error" />
