@@ -1,4 +1,4 @@
-package com.tenvit.leaf.exception;
+package com.sankuai.inf.leaf.exception;
 
 /**
  * leaf服务Rpc调用异常

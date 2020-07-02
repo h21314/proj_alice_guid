@@ -1,4 +1,4 @@
-package com.tenvit.leaf.services;
+package com.sankuai.inf.leaf.services;
 
 
 import org.springframework.validation.annotation.Validated;

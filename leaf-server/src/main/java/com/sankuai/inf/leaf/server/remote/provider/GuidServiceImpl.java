@@ -4,8 +4,8 @@ import com.sankuai.inf.leaf.common.Result;
 import com.sankuai.inf.leaf.common.Status;
 import com.sankuai.inf.leaf.server.service.SegmentService;
 import com.sankuai.inf.leaf.server.service.SnowflakeService;
-import com.tenvit.leaf.exception.GuidServerException;
-import com.tenvit.leaf.services.GuidService;
+import com.sankuai.inf.leaf.exception.GuidServerException;
+import com.sankuai.inf.leaf.services.GuidService;
 import org.apache.dubbo.config.annotation.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 
