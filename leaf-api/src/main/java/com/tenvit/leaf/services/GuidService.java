@@ -11,7 +11,7 @@ import javax.validation.constraints.NotBlank;
  * @create 2020-06-30 17:45
  */
 @Validated
-public interface GidService {
+public interface GuidService {
 
     /**
      * 获取数据库分段式id

@@ -4,8 +4,8 @@ import com.sankuai.inf.leaf.common.Result;
 import com.sankuai.inf.leaf.common.Status;
 import com.sankuai.inf.leaf.server.service.SegmentService;
 import com.sankuai.inf.leaf.server.service.SnowflakeService;
-import com.tenvit.leaf.exception.GidServerException;
-import com.tenvit.leaf.services.GidService;
+import com.tenvit.leaf.exception.GuidServerException;
+import com.tenvit.leaf.services.GuidService;
 import org.apache.dubbo.config.annotation.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -16,7 +16,7 @@ import javax.validation.constraints.NotBlank;
  * @create 2020-06-30 19:12
  */
 @Service
-public class GidServiceImpl implements GidService {
+public class GuidServiceImpl implements GuidService {
 
     @Autowired
     private SegmentService segmentService;
@@ -35,7 +35,7 @@ public class GidServiceImpl implements GidService {
 
     private Long get(Result result) {
         if (result.getStatus().equals(Status.EXCEPTION)) {
-            throw new GidServerException(result.toString());
+            throw new GuidServerException(result.toString());
         }
         return result.getId();
     }

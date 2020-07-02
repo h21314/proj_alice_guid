@@ -5,9 +5,9 @@ package com.tenvit.leaf.exception;
  * @author zhangmc
  * @create 2020-06-30 19:05
  */
-public class GidServerException extends RuntimeException {
+public class GuidServerException extends RuntimeException {
 
-    public GidServerException(String msg){
+    public GuidServerException(String msg){
         super(msg);
     }
 

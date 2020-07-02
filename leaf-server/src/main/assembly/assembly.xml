@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assembly>
+    <id>assembly</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <!-- zip压缩包下是否生成和项目名相同的根目录 -->
+    <includeBaseDirectory>true</includeBaseDirectory>
+    <fileSets>
+        <fileSet>
+            <directory>src/main/assembly/bin</directory>
+            <outputDirectory>bin</outputDirectory>
+            <directoryMode>0755</directoryMode>
+            <fileMode>0755</fileMode>
+            <includes>
+                <include>**.sh</include>
+            </includes>
+            <lineEnding>unix</lineEnding>
+        </fileSet>
+        <!-- 把项目相关的说明文件，打包进zip文件的根目录 -->
+        <!--fileSet>
+            <directory>${project.basedir}</directory>
+            <outputDirectory>/</outputDirectory>
+            <includes>
+                <include>README*</include>
+                <include>LICENSE*</include>
+                <include>NOTICE*</include>
+                <include>build.info</include>
+            </includes>
+        </fileSet>-->
+        <fileSet>
+            <directory>${project.build.directory}/classes</directory>
+            <outputDirectory>conf</outputDirectory>
+            <directoryMode>0755</directoryMode>
+            <fileMode>0644</fileMode>
+            <includes>
+                <include>*.xml</include>
+                <include>*.properties</include>
+            </includes>
+            <lineEnding>unix</lineEnding>
+        </fileSet>
+
+
+        <!-- 将第三方依赖打包到lib目录中 -->
+        <fileSet>
+            <directory>${project.build.directory}/lib</directory>
+            <outputDirectory>lib</outputDirectory>
+            <directoryMode>0744</directoryMode>
+            <fileMode>0644</fileMode>
+        </fileSet>
+
+        <!--  把项目自己编译出来的启动jar文件，打包进zip文件的根目录 -->
+<!--        <fileSet>-->
+<!--            <directory>${project.build.directory}</directory>-->
+<!--            <outputDirectory>boot</outputDirectory>-->
+<!--            <fileMode>0755</fileMode>-->
+<!--            <includes>-->
+<!--                <include>${project.build.finalName}.jar</include>-->
+<!--            </includes>-->
+<!--        </fileSet>-->
+    </fileSets>
+
+
+    <!-- 项目的依赖包 -->
+    <dependencySets>
+        <dependencySet>
+            <outputDirectory>lib</outputDirectory>
+            <useProjectArtifact>true</useProjectArtifact>
+        </dependencySet>
+    </dependencySets>
+
+</assembly>
