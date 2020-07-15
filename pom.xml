@@ -141,16 +141,24 @@
             <id>dev</id>
             <properties>
                 <profiles.active>dev</profiles.active>
-                <nacos.addr>10.0.32.6:8848</nacos.addr>
-                <nacos.namespace>e79c4fde-16ac-4ea5-b5aa-695b398191c1</nacos.namespace>
+                <nacos.addr>122.51.63.52:8848</nacos.addr>
+                <nacos.namespace>ec755dec-d85f-4f40-9b20-648e6c11c2b8</nacos.namespace>
             </properties>
         </profile>
         <profile>
             <id>uat</id>
             <properties>
                 <profiles.active>uat</profiles.active>
-                <nacos.addr>10.0.32.6:8848</nacos.addr>
-                <nacos.namespace>a679dacd-3a65-40b2-9ec0-a710c1e8ebea</nacos.namespace>
+                <nacos.addr>122.51.63.52:8848</nacos.addr>
+                <nacos.namespace>d28e90a0-e1c8-4015-98f8-20a919c18a8d</nacos.namespace>
+            </properties>
+        </profile>
+        <profile>
+            <id>pre</id>
+            <properties>
+                <profiles.active>pre</profiles.active>
+                <nacos.addr>122.51.63.52:8848</nacos.addr>
+                <nacos.namespace>8fd4b377-9150-4f9d-8350-d1351dc3fa21</nacos.namespace>
             </properties>
         </profile>
     </profiles>
