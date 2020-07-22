@@ -1,5 +1,6 @@
 package com.sankuai.inf.leaf.server.remote.provider;
 
+import com.google.common.collect.Lists;
 import com.sankuai.inf.leaf.common.Result;
 import com.sankuai.inf.leaf.common.Status;
 import com.sankuai.inf.leaf.server.service.SegmentService;
@@ -9,7 +10,7 @@ import com.sankuai.inf.leaf.services.GuidService;
 import org.apache.dubbo.config.annotation.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.validation.constraints.NotBlank;
+import java.util.List;
 
 /**
  * @author zhangmc
@@ -24,13 +25,31 @@ public class GuidServiceImpl implements GuidService {
     private SnowflakeService snowflakeService;
 
     @Override
-    public Long getSegmentId(@NotBlank(message = "key不能为空") String key) {
+    public Long getSegmentId(String key) {
         return get(segmentService.getId(key));
+    }
+
+    @Override
+    public List<Long> getSegmentId(String key, Integer batchCount) {
+        List<Long> resultList = Lists.newArrayList();
+        for (int i = 0; i < batchCount; i++) {
+            resultList.add(get(segmentService.getId(key)));
+        }
+        return resultList;
     }
 
     @Override
     public Long getSnowflakeId() {
         return get(snowflakeService.getId(null));
+    }
+
+    @Override
+    public List<Long> getSnowflakeId(Integer batchCount) {
+        List<Long> resultList = Lists.newArrayList();
+        for (int i = 0; i < batchCount; i++) {
+            resultList.add(get(snowflakeService.getId(null)));
+        }
+        return resultList;
     }
 
     private Long get(Result result) {
